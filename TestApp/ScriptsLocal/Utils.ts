@@ -108,3 +108,34 @@ module loader {
     export var baseURL: string = "";
     export var useCache: boolean = true;
 }
+
+
+// extra utilities
+interface Array<T> {
+    remove(item: T): boolean;
+    removeWhere(predicate: (item: T) => boolean, max?: number): void;
+}
+/** remove one instance of the item and returns whether it was in the array or not */
+Array.prototype.remove = function <T>(item: T): boolean {
+    for (var i = this.length; i-- > 0;) {
+        var ti = this[i];
+        if (ti === item) {
+            this.splice(i, 1);
+            return true;
+        }
+    }
+    return false;
+}
+/** remove one instance of the item and returns whether it was in the array or not */
+Array.prototype.removeWhere = function <T>(predicate: (item: T) => boolean, max?: number): void {
+    var rc = 0;
+    for (var i = this.length; i-- > 0;) {
+        if (predicate(this[i])) {
+            this.splice(i, 1);
+            if (max && max > 0) {
+                rc++;
+                if (rc >= max) break;
+            }
+        }
+    }
+}

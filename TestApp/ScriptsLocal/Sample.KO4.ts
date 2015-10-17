@@ -20,12 +20,7 @@
             removeSelected: function () {
                 for (var i = 0; i < this.selected.length; i++) {
                     var item = this.selected[i];
-                    for (var j = 0; j < this.items.length; j++) {
-                        if (this.items[j] == item) {
-                            this.items.splice(j, 1);
-                            break;
-                        }
-                    }
+                    this.items.remove(item);
                 }
                 this.selected = [];
             },

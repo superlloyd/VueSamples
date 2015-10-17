@@ -97,3 +97,28 @@ var loader;
     loader.baseURL = "";
     loader.useCache = true;
 })(loader || (loader = {}));
+/** remove one instance of the item and returns whether it was in the array or not */
+Array.prototype.remove = function (item) {
+    for (var i = this.length; i-- > 0;) {
+        var ti = this[i];
+        if (ti === item) {
+            this.splice(i, 1);
+            return true;
+        }
+    }
+    return false;
+};
+/** remove one instance of the item and returns whether it was in the array or not */
+Array.prototype.removeWhere = function (predicate, max) {
+    var rc = 0;
+    for (var i = this.length; i-- > 0;) {
+        if (predicate(this[i])) {
+            this.splice(i, 1);
+            if (max && max > 0) {
+                rc++;
+                if (rc >= max)
+                    break;
+            }
+        }
+    }
+};

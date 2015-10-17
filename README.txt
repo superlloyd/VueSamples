@@ -16,6 +16,10 @@ http://vuejs.org/examples/
 	then right click on .less file > Web Compiler > compile file
 
 
+Knockout simplified
+http://blog.stevensanderson.com/2013/05/20/knockout-es5-a-plugin-to-simplify-your-syntax/
+
+
 VUE LINKS
 =========
 

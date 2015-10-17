@@ -10,10 +10,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- VueJS (0.12.16) -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.js"></script>
 
     <!-- sample styles -->
     <link href="Content/samples.css" rel="stylesheet" />
+    <style type="text/css">
+        select {
+            width:8em;
+        }
+        input {
+            width:4em;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,34 +58,38 @@
                                 <th width='10%'> </th>
                             </tr>
                         </thead>
-                        <tbody data-bind='foreach: lines'>
+                        <tbody v-repeat='lines'>
                             <tr>
-                                <td>
-                                    <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select>
+                                <td width='25%'>
+                                    <select v-model="category" options="categories" v-on="change: product = null">
+                                        <option value="">Select...</option>
+                                    </select>
                                 </td>
-                                <td data-bind="with: category">
-                                    <select data-bind='options: products, optionsText: "name", optionsCaption: "Select...", value: $parent.product'> </select>
+                                <td width='25%'>
+                                    <select v-show="category" v-model="product" options='category | byName'>
+                                        <option value="">Select...</option>
+                                    </select>
                                 </td>
-                                <td class='price' data-bind='with: product'>
-                                    <span data-bind='text: formatCurrency(price)'> </span>
+                                <td class='price' width='15%'>
+                                    <span v-text='formatCurrency(product.price)'> </span>
                                 </td>
-                                <td class='quantity'>
-                                    <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' />
+                                <td class='quantity' width='10%'>
+                                    <input v-show='product' v-model='quantity' />
                                 </td>
-                                <td class='price'>
-                                    <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
+                                <td class='price' width='15%'>
+                                    <span v-show="product" v-text='formatCurrency($data.subtotal())' > </span>
                                 </td>
-                                <td>
-                                    <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
+                                <td width='10%'>
+                                    <a href='#' v-on='click: $parent.$data.removeLine($data)'>Remove</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <p class='grandTotal'>
-                        Total value: <span data-bind='text: formatCurrency(grandTotal())'> </span>
+                        Total value: <span v-text='formatCurrency($data.grandTotal())'> </span>
                     </p>
-                    <button data-bind='click: addLine'>Add product</button>
-                    <button data-bind='click: save'>Submit order</button>
+                    <button v-on='click: $data.addLine()'>Add product</button>
+                    <button v-on='click: $data.save()'>Submit order</button>
 
                 </div>
                 <source-view title="Source code: view" selector=".liveExample"></source-view>
@@ -97,6 +110,7 @@
     <script src="ScriptsLocal/components/SourceView.js"></script>
 
     <!-- PAGE SCRIPT HERE -->
+    <script src="ScriptsLocal/Sample.ShopCart-products.js"></script>
     <script src="ScriptsLocal/Sample.ShopCart.js"></script>
 </body>
 </html>

@@ -129,6 +129,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ScriptsLocal\Sample.ShopCart-products.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\SourceView.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\directives.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO1.ts" />
