@@ -59,6 +59,9 @@ body nav ul {
 body article {
   padding: 1em;
 }
+[v-cloak] {
+  display: none;
+}
 .liveExample {
   padding: 1em;
   background-color: #EEEEDD;

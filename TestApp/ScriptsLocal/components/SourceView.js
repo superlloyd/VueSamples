@@ -31,4 +31,3 @@ Vue.component('source-view', function (resolve, reject) {
         });
     }).fail(function (x) { return reject(x); });
 });
-//# sourceMappingURL=SourceView.js.map

@@ -21,4 +21,3 @@ var Sample;
         });
     })(KO3 = Sample.KO3 || (Sample.KO3 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.KO3.js.map
