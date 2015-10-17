@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TITLE HERE</title>
+    <meta charset="utf-8" />
+
+    <!-- base libraries: jQuery (2.1.4), bootstrap (3.1.1) -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- VueJS (0.12.16) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+
+    <!-- sample styles -->
+    <link href="Content/samples.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .label {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Vue Samples Collection</h1></header>
+    <main>
+        <nav>
+            <div id="ListOfSamples"></div>
+        </nav>
+        <article>
+
+            <!-- http://knockoutjs.com/examples/controlTypes.html -->
+            <h1>Control types example</h1>
+            <p>
+                For reference, here’s an example of binding view model properties to a range of HTML control types. There’s nothing interesting about the view model here - this is just to make clear how bindings work with select elements, radio buttons, etc.
+            </p>
+
+            <div id="sample" v-cloak>
+                <h2>Live Example</h2>
+                <div class="liveExample">
+                    <div class="readout">
+                        <h3>What's in the model?</h3>
+                        <table>
+                            <tr>
+                                <td class="label">Text value:</td>
+                                <td v-text="stringValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Password:</td>
+                                <td v-text="passwordValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Bool value:</td>
+                                <td v-text='booleanValue ? "True" : "False"'></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Selected option:</td>
+                                <td v-text="selectedOptionValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Multi-selected options:</td>
+                                <td v-text="multipleSelectedOptionValues"></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Radio button selection:</td>
+                                <td v-text="radioSelectedOptionValue"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3>HTML controls</h3>
+                    <table>
+                        <tr>
+                            <td class="label">Text value (updates on change):</td>
+                            <td><input v-model="stringValue" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Text value (updates on keystroke):</td>
+                            <td><input v-model='stringValue' debounce="300" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Text value (multi-line):</td>
+                            <td><textarea v-model="stringValue"> </textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Password:</td>
+                            <td><input type="password" v-model="passwordValue" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Checkbox:</td>
+                            <td><input type="checkbox" v-model="booleanValue" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Drop-down list:</td>
+                            <td><select options="optionValues" v-model="selectedOptionValue"></select></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Multi-select drop-down list:</td>
+                            <td><select multiple style="width:200px;" options="optionValues" v-model="multipleSelectedOptionValues"></select></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Radio buttons:</td>
+                            <td>
+                                <label><input type="radio" value="Alpha" v-model="radioSelectedOptionValue" />Alpha</label>
+                                <label><input type="radio" value="Beta" v-model="radioSelectedOptionValue" />Beta</label>
+                                <label><input type="radio" value="Gamma" v-model="radioSelectedOptionValue" />Gamma</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <source-view title="Source code: view" selector=".liveExample"></source-view>
+                <source-view title="Source code: view model" url="ScriptsLocal/Sample.KO5.ts"></source-view>
+
+            </div>
+
+        </article>
+    </main>
+
+    <!-- local scripts -->
+    <script src="ScriptsLocal/Utils.js"></script>
+    <script type="text/javascript">
+        loader.baseURL = document.URL.substr(0, document.URL.lastIndexOf('/'));
+        loader('ListOfSamples.html').then(function (s) { new Vue({ el: '#ListOfSamples', template: s }); });
+    </script>
+    <script src="ScriptsLocal/components/directives.js"></script>
+    <script src="ScriptsLocal/components/SourceView.js"></script>
+
+    <!-- page's script here -->
+    <script src="ScriptsLocal/Sample.KO5.js"></script>
+
+</body>
+</html>

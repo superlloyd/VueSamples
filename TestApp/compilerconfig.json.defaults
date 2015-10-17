@@ -1,0 +1,35 @@
+{
+  "compilers": {
+    "less": {
+      "autoPrefix": "",
+      "ieCompat": true,
+      "strictMath": false,
+      "strictUnits": false,
+      "relativeUrls": true,
+      "rootPath": ""
+    },
+    "sass": {
+      "indentType": "space",
+      "indentWidth": 2,
+      "outputStyle": "nested",
+      "Precision": 5,
+      "relativeUrls": true
+    },
+    "coffeescript": {
+      "bare": false,
+      "runtimeMode": "node"
+    }
+  },
+  "minifiers": {
+    "css": {
+      "enabled": true,
+      "termSemicolons": true,
+      "gzip": false
+    },
+    "javascript": {
+      "enabled": true,
+      "termSemicolons": true,
+      "gzip": false
+    }
+  }
+}

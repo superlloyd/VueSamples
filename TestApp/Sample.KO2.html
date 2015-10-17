@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TITLE HERE</title>
+    <meta charset="utf-8" />
+
+    <!-- base libraries: jQuery (2.1.4), bootstrap (3.1.1) -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- VueJS (0.12.16) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+
+    <!-- sample styles -->
+    <link href="Content/samples.css" rel="stylesheet" />
+</head>
+<body>
+    <header><h1>Vue Samples Collection</h1></header>
+    <main>
+        <nav>
+            <div id="ListOfSamples"></div>
+        </nav>
+        <article>
+
+            <!-- http://knockoutjs.com/examples/clickCounter.html -->
+            <h1>Click counter example</h1>
+            <p>
+                This example demonstrates creating a view model class and applying various bindings to some HTML markup so that it reflects and edits the state of the view model.
+            </p>
+            <p>
+                VueJS tracks dependencies. Internally, hasClickedTooManyTimes has a subscription on numberOfClicks, so when numberOfClicks changes, that forces hasClickedTooManyTimes to be re-evaluated. Similarly, multiple parts of the UI reference hasClickedTooManyTimes and are therefore subscribed to it. Whenever hasClickedTooManyTimes changes, this causes the UI to be updated.
+            </p>
+            <p>
+                You don’t have to define or manage these subscriptions manually. They are created and destroyed as needed by the framework. Check the HTML source code to see how simple this is.
+            </p>
+
+            <div id="sample" v-cloak>
+                <h2>Live Example</h2>
+                <div class="liveExample">
+                    <div>You've clicked <span v-text='numberOfClicks'>&nbsp;</span> times</div>
+                    <button v-on="click: registerClick()" v-disable="hasClickedTooManyTimes">Click me</button>
+                    <div v-show='hasClickedTooManyTimes'>
+                        That's too many clicks! Please stop before you wear out your fingers.
+                        <button v-on='click: numberOfClicks = 0'>Reset clicks</button>
+                    </div>
+                </div>
+
+                <source-view title="Source code: view" selector=".liveExample"></source-view>
+                <source-view title="Source code: view model" url="ScriptsLocal/Sample.KO2.ts"></source-view>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- local scripts -->
+    <script src="ScriptsLocal/Utils.js"></script>
+    <script type="text/javascript">
+        loader.baseURL = document.URL.substr(0, document.URL.lastIndexOf('/'));
+        loader('ListOfSamples.html').then(function (s) { new Vue({ el: '#ListOfSamples', template: s }); });
+    </script>
+    <script src="ScriptsLocal/components/directives.js"></script>
+    <script src="ScriptsLocal/components/SourceView.js"></script>
+
+    <!-- page's script here -->
+    <script src="ScriptsLocal/Sample.KO2.js"></script>
+
+</body>
+</html>
