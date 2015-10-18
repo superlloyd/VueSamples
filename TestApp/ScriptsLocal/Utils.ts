@@ -61,7 +61,6 @@ module loader {
             if (useCache === undefined)
                 useCache = true;
             this.result = $.Deferred<any>();
-            //this.query = $.get(loader.baseURL + this.url);
             this.query = $.ajax({
                 url: loader.baseURL + this.url,
                 cache: useCache,

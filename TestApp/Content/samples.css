@@ -12,7 +12,6 @@ body {
   flex-direction: column;
 }
 body main {
-  height: 100%;
   overflow: auto;
   flex-grow: 1;
   display: -webkit-flex;
@@ -26,6 +25,9 @@ body aside,
 body nav {
   flex-shrink: 0;
   flex-basis: auto;
+}
+body nav {
+  min-height: 100%;
 }
 body header {
   background-color: #4E0A01;
