@@ -89,6 +89,8 @@
     <Content Include="Content\samples.min.css">
       <DependentUpon>samples.css</DependentUpon>
     </Content>
+    <Content Include="Sample.MapControl.html" />
+    <Content Include="Sample.TabControl.html" />
     <Content Include="Sample.ShopCart.html" />
     <Content Include="DefaultPage.html" />
     <Content Include="Global.asax" />
@@ -129,6 +131,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ScriptsLocal\components\TabControl.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\Sample.MapControl.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\Sample.TabControl.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.ShopCart-products.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\SourceView.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\directives.ts" />

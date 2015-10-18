@@ -4,6 +4,7 @@ enum LoaderType {
     AsString,
     AsScriptTag,
     AsCssTag,
+    AsContent,
 }
 interface ILoaderOptions {
     url: string;
@@ -55,6 +56,7 @@ module loader {
         private url: string;
         private text: string;
         private CSS: HTMLStyleElement;
+        private CONTENT: HTMLDivElement;
         private Script: HTMLScriptElement;
 
         reload(useCache?: boolean) {
@@ -100,6 +102,13 @@ module loader {
                     this.CSS.type = options.tagType;
                     this.CSS.style.cssText = this.text;
                     break;
+                case LoaderType.AsContent:
+                    if (!this.CONTENT) {
+                        this.CONTENT = document.createElement('div');
+                        document.appendChild(this.CONTENT);
+                    }
+                    this.CONTENT.innerHTML = this.text;
+                    break;
             }
         }
     }
@@ -137,4 +146,21 @@ Array.prototype.removeWhere = function <T>(predicate: (item: T) => boolean, max?
             }
         }
     }
+}
+
+function guid(): string {
+    var d = Date.now();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+}
+function createHTML(name: string, attributes: any): HTMLElement {
+    var res = document.createElement(name);
+    for (var k in attributes) {
+        res.setAttribute(k, attributes[k]);
+    }
+    return res;
 }

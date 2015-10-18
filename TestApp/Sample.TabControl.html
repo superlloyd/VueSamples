@@ -30,12 +30,29 @@
             <div id="sample" v-cloak>
                 <h2>Live Example</h2>
                 <div class="liveExample">
-                    CONTENT HERE
+
+                    <div v-tabcontrol>
+                        <tab-item header="Tab1">
+                            somethings
+                        </tab-item>
+                        <tab-item header="Tab2">
+                            something else! <button>click</button>
+                        </tab-item>
+                        <tab-item>
+                            <div>
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/emojione/1.5.0/assets/png/0023-20E3.png" width="18" height="18" /> Identity
+                            </div>
+                            <div>
+                                Name, please? <input type="text" />
+                            </div>
+                        </tab-item>
+                    </div>
                 </div>
 
                 <script type="text/javascript">var htmlSample = $('.liveExample').html();</script>
                 <source-view title="Source code: view" selector=".liveExample"></source-view>
-                <source-view title="Source code: view model" url="ScriptsLocal/MYSCRIPTS.ts"></source-view>
+                <source-view title="Source code: view model" url="ScriptsLocal/Sample.TabControl.ts"></source-view>
+                <source-view title="Source code: TabControl component" url="ScriptsLocal/components/TabControl.ts"></source-view>
             </div>
 
         </article>
@@ -51,6 +68,7 @@
     <script src="ScriptsLocal/components/SourceView.js"></script>
 
     <!-- PAGE SCRIPT HERE -->
-    <script src="ScriptsLocal/MYSCRIPTS.js"></script>
+    <script src="ScriptsLocal/components/TabControl.js"></script>
+    <script src="ScriptsLocal/Sample.TabControl.js"></script>
 </body>
 </html>

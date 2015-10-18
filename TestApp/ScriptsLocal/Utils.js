@@ -4,6 +4,7 @@ var LoaderType;
     LoaderType[LoaderType["AsString"] = 0] = "AsString";
     LoaderType[LoaderType["AsScriptTag"] = 1] = "AsScriptTag";
     LoaderType[LoaderType["AsCssTag"] = 2] = "AsCssTag";
+    LoaderType[LoaderType["AsContent"] = 3] = "AsContent";
 })(LoaderType || (LoaderType = {}));
 function loader(urlOrArgs) {
     var options;
@@ -87,6 +88,13 @@ var loader;
                     this.CSS.type = options.tagType;
                     this.CSS.style.cssText = this.text;
                     break;
+                case LoaderType.AsContent:
+                    if (!this.CONTENT) {
+                        this.CONTENT = document.createElement('div');
+                        document.appendChild(this.CONTENT);
+                    }
+                    this.CONTENT.innerHTML = this.text;
+                    break;
             }
         };
         return CacheData;
@@ -121,3 +129,20 @@ Array.prototype.removeWhere = function (predicate, max) {
         }
     }
 };
+function guid() {
+    var d = Date.now();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+}
+function createHTML(name, attributes) {
+    var res = document.createElement(name);
+    for (var k in attributes) {
+        res.setAttribute(k, attributes[k]);
+    }
+    return res;
+}
+//# sourceMappingURL=Utils.js.map
