@@ -144,6 +144,7 @@
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO4.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO3.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Utils.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\vue\vue.d.ts" />
   </ItemGroup>

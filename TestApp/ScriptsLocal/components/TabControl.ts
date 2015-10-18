@@ -1,6 +1,8 @@
 ﻿Vue.directive('tabcontrol', {
     bind: function () {
         var el: HTMLElement = this.el;
+        var myAId = el.attributes.getNamedItem('id');
+        var myId = myAId ? myAId.value : 'TAB' + guid();
         if (el.children.length > 0) {
 
             var panel = createHTML('div', { role: 'tabpanel', class:'panel panel-default' });
@@ -22,8 +24,7 @@
                 }
 
                 var aid = item.attributes.getNamedItem('id');
-                var uid = aid != null ? aid.value : guid();
-                //var isActive = activeId ? (activeId == uid) : (i == 0);
+                var uid = aid != null ? aid.value : 'tabItem-' + myId + '-' + i;
                 var isActive = (i == 0);
 
                 var attrs: any = { role: 'presentation' };
@@ -44,7 +45,17 @@
 
             panel.appendChild(headers);
             panel.appendChild(contents);
-            el.outerHTML = panel.outerHTML;
+            el.innerHTML = panel.outerHTML;
         }
+        var activate = (previous: HASH.ILocation, current: HASH.ILocation) => {
+            var tab = current.kv[myId];
+            if (tab)
+                $('a[href="#' + tab + '"]', el).tab('show');
+        };
+        HASH.on(activate);
+        $(document).ready(() => { activate(null, HASH.value()); });
+        $('a[data-toggle="tab"]', el).on('shown.bs.tab', function (e) {
+            HASH.set(myId, e.target.attributes.getNamedItem('href').value.substr(1));
+        })
     }
 })
