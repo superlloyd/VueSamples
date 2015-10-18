@@ -14,6 +14,12 @@
 
     <!-- sample styles -->
     <link href="Content/samples.css" rel="stylesheet" />
+    <style>
+        #myMap {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,7 +36,9 @@
             <div id="sample" v-cloak>
                 <h2>Live Example</h2>
                 <div class="liveExample">
-                    CONTENT HERE
+
+                    <google-map id="myMap" lat="-27.468" lng="153.025" zoom="10"></google-map>
+
                 </div>
 
                 <script type="text/javascript">var htmlSample = $('.liveExample').html();</script>
@@ -43,7 +51,7 @@
 
     <!-- local scripts -->
     <script src="ScriptsLocal/Utils.js"></script>
-    <script type="text/javascript" >
+    <script type="text/javascript">
         loader.baseURL = document.URL.substr(0, document.URL.lastIndexOf('/'));
         loader('ListOfSamples.html').then(function (s) { new Vue({ el: '#ListOfSamples', template: s }); });
     </script>
@@ -51,6 +59,7 @@
     <script src="ScriptsLocal/components/SourceView.js"></script>
 
     <!-- PAGE SCRIPT HERE -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=gmapInitialized" async defer></script>
     <script src="ScriptsLocal/Sample.MapControl.js"></script>
 </body>
 </html>
