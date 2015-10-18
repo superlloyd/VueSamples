@@ -85,6 +85,7 @@ module Sample.KO1 {
             new google.maps.LatLng(-27.468, 153.025),
             new google.maps.LatLng(-27.478, 153.035),
             new google.maps.LatLng(-27.458, 153.015),
+            new google.maps.LatLng(-27.458, 153.055),
         ];
     });
 }
