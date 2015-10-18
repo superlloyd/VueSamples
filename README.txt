@@ -1,12 +1,3 @@
-TypeScript
-http://www.typescriptlang.org/Handbook
-
-play test with Vue.js
-http://vuejs.org
-
-Vue.d.ts
-https://github.com/diverted247/vuets
-(included vue0.16)
 
 VueJS (to comprehend)
 http://vuejs.org/examples/
