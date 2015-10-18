@@ -1,3 +1,12 @@
+Some Vue JS Sample to test Vue JS MVVM library under various scenario.
+Also use TypeScript and Bootstrap to beautify th code and the UI.
+
+- VueJS: http://vuejs.org
+- Bootstrap: http://getbootstrap.com/
+- TypeScript: http://www.typescriptlang.org/
+
+
+TODO
 
 VueJS (to comprehend)
 http://vuejs.org/examples/
