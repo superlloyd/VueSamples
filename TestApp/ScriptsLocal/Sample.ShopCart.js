@@ -4,9 +4,11 @@ var Sample;
     (function (KO3) {
         var CartLine = (function () {
             function CartLine() {
+                var _this = this;
                 this.category = null;
                 this.product = null;
                 this.quantity = 1;
+                Vue.watcher(this, 'category', function (x) { return _this.product = null; });
             }
             CartLine.prototype.subtotal = function () {
                 if (!this.product)

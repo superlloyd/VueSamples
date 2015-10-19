@@ -8,6 +8,9 @@
         category: any = null;
         product: IProduct = null;
         quantity: number = 1;
+        constructor() {
+            Vue.watcher(this, 'category', (x) => this.product = null);
+        }
         subtotal() {
             if (!this.product)
                 return 0;
