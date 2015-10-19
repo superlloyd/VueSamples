@@ -48,7 +48,9 @@
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />
-                        <span v-repeat="item in selected">{{ item.name }}, </span>
+                        <span v-repeat="item in selected">
+                            {{ item.name }} ({{single.ID}}),
+                        </span>
                     </p>
                     <p>
                         Single Selection
@@ -56,8 +58,10 @@
                                     chosen="{{ { width:'20em'} }}"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
-                        <br/>
-                        <span v-if="single">{{single.name}}</span>
+                        <br />
+                        <span v-if="single">
+                            {{single.name}} by {{single.author}}, ratings: {{single.rating}} ({{single.ID}})
+                        </span>
                     </p>
                 </div>
 
