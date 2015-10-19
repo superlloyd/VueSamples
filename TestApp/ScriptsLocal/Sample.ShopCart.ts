@@ -9,6 +9,7 @@
         product: IProduct = null;
         quantity: number = 1;
         constructor() {
+            // REMARK local additional functionality, not part of original Vue!!!
             Vue.watcher(this, 'category', (x) => this.product = null);
         }
         subtotal() {
