@@ -45,7 +45,10 @@
 
             panel.appendChild(headers);
             panel.appendChild(contents);
-            el.innerHTML = panel.outerHTML;
+            //el.innerHTML = panel.outerHTML; //this doesn't work with IE!!
+            while (el.childNodes.length > 0)
+                el.removeChild(el.childNodes[0]);
+            el.appendChild(panel);
         }
         var activate = (previous: HASH.ILocation, current: HASH.ILocation) => {
             var tab = current.kv[myId];
