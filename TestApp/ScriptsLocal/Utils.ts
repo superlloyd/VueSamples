@@ -120,8 +120,18 @@ module loader {
 
 // extra utilities
 interface Array<T> {
+    contains(item: T): boolean;
     remove(item: T): boolean;
     removeWhere(predicate: (item: T) => boolean, max?: number): void;
+}
+/** check an array contains an item */
+Array.prototype.contains = function <T>(item: T): boolean {
+    for (var i = this.length; i-- > 0;) {
+        var ti = this[i];
+        if (ti === item) 
+            return true;
+    }
+    return false;
 }
 /** remove one instance of the item and returns whether it was in the array or not */
 Array.prototype.remove = function <T>(item: T): boolean {

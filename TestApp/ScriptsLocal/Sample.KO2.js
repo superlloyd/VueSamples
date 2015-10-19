@@ -17,4 +17,3 @@ var Sample;
         });
     })(KO2 = Sample.KO2 || (Sample.KO2 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.KO2.js.map

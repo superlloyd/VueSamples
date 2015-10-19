@@ -35,14 +35,30 @@
             <div id="ListOfSamples"></div>
         </nav>
         <article>
-            THis demonstrate how to use <a href="https://harvesthq.github.io/chosen/">Chosen</a> with Vue.
+            This demonstrate how to use <a href="https://harvesthq.github.io/chosen/">Chosen</a> with Vue.
 
             <div id="sample" v-cloak>
                 <h2>Live Example</h2>
                 <div class="liveExample">
-                    CONTENT HERE
-                    <vue-chosen foo="bar"></vue-chosen>
-
+                    <p>
+                        Multi Selection:
+                        <vue-chosen options="{{books}}" selected-options="{{@ selected}}"
+                                    multiple="true"
+                                    chosen="{{ { width:'30em'} }}"
+                                    placeholder="chose a book!.."
+                                    text-key="name"></vue-chosen>
+                        <br />
+                        <span v-repeat="item in selected">{{ item.name }}, </span>
+                    </p>
+                    <p>
+                        Single Selection
+                        <vue-chosen options="{{books}}" v-model="{{@ single}}"
+                                    chosen="{{ { width:'20em'} }}"
+                                    placeholder="chose a book!.."
+                                    text-key="name"></vue-chosen>
+                        <br/>
+                        <span v-if="single">{{single.name}}</span>
+                    </p>
                 </div>
 
                 <script type="text/javascript">var htmlSample = $('.liveExample').html();</script>

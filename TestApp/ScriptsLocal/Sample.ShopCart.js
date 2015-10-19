@@ -50,13 +50,12 @@ var Sample;
                 }
             },
             filters: {
-                byName: function (val) {
+                mapByKey: function (val, key) {
                     if (!val)
                         return val;
-                    return val.map(function (x) { return { text: x.name, value: x }; });
+                    return val.map(function (x) { return { text: x[key], value: x }; });
                 },
             },
         });
     })(KO3 = Sample.KO3 || (Sample.KO3 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.ShopCart.js.map

@@ -47,10 +47,10 @@
             }
         },
         filters: {
-            byName: function (val) {
+            mapByKey: function (val, key) {
                 if (!val)
                     return val;
-                return val.map(x => { return { text: x.name, value: x }; });
+                return val.map(x => { return { text: x[key], value: x }; });
             },
         },
     });

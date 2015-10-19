@@ -104,6 +104,15 @@ var loader;
     loader.baseURL = "";
     loader.useCache = true;
 })(loader || (loader = {}));
+/** check an array contains an item */
+Array.prototype.contains = function (item) {
+    for (var i = this.length; i-- > 0;) {
+        var ti = this[i];
+        if (ti === item)
+            return true;
+    }
+    return false;
+};
 /** remove one instance of the item and returns whether it was in the array or not */
 Array.prototype.remove = function (item) {
     for (var i = this.length; i-- > 0;) {
@@ -241,4 +250,3 @@ var HASH;
     ;
     $(document).ready(function () { return scrollToHash(); });
 })(HASH || (HASH = {}));
-//# sourceMappingURL=Utils.js.map
