@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsLocal\chosen.d.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\components\GoogleMap.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\TabControl.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\components\VueChosen.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.Chosen.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.MapControl.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.TabControl.ts" />
