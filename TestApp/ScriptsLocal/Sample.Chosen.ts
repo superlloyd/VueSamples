@@ -1,9 +1,10 @@
 ﻿Vue.component('vue-chosen', {
     template: '<select data-placeholder={{placeholder}} v-attr="multiple:multiple" class="chosen-select">' +
     ' <option v-if="placeholder"></option>' +
-    ' <option v-repeat="item in options | toSelectItem" v-j-data="item.value">{{item.text}}</option>' +
+    ' <option v-repeat="item in options | toOptionData" v-j-data="item">{{item.text}}</option>' +
     ' </select>'
-    , data: function () {
+    ,
+    data: function () {
         return {
             changing: false,
         };
@@ -24,7 +25,7 @@
         multiple: { type: Boolean, required: false, }
     },
     filters: {
-        toSelectItem: function (val) {
+        toOptionData: function (val) {
             if (!val)
                 return val;
             var key = this.textKey;
@@ -43,7 +44,7 @@
                     var data = $(e).data('chosen');
                     if (!data)
                         return;
-                    if (objs.contains(data)) $(e).attr('selected', 'selected');
+                    if (objs.contains(data.value)) $(e).attr('selected', 'selected');
                     else $(e).removeAttr('selected');
                 });
                 $(this.$el).trigger("chosen:updated");
@@ -72,7 +73,7 @@
                     this.selectedOptions = target;
                 }
                 target.splice(0, target.length);
-                $(this.$el).find(':selected').each((i, e) => target.push($(e).data('chosen')));
+                $(this.$el).find(':selected').each((i, e) => target.push($(e).data('chosen').value));
                 this.vModel = target.length > 0 ? target[0] : null;
             }
             finally {
