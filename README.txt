@@ -28,5 +28,3 @@ Image loading animation
 TODO:
 	+ Paged Sorted grid
 	+ Modal component
-	+ Test VueJS + Chosen (https://harvesthq.github.io/chosen/) / nice text drop down
-	+ Click to edit text area

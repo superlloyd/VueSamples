@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TITLE HERE</title>
+    <meta charset="utf-8" />
+
+    <!-- base libraries: jQuery (2.1.4), bootstrap (3.1.1) -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- VueJS (0.12.16) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+
+    <!-- chosen files -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.proto.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css" rel="stylesheet">
+
+    <!-- sample styles -->
+    <link href="Content/samples.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <h1>Vue Samples Collection</h1>
+        <div style="float:right;vertical-align:bottom;">
+            <a href="http://vuejs.org">Vue</a>
+            | <a href="http://getbootstrap.com/">Bootstrap</a>
+            | <a href="http://www.typescriptlang.org/">TypeScript</a>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <div id="ListOfSamples"></div>
+        </nav>
+        <article>
+            THis demonstrate how to use <a href="https://harvesthq.github.io/chosen/">Chosen</a> with Vue.
+
+            <div id="sample" v-cloak>
+                <h2>Live Example</h2>
+                <div class="liveExample">
+                    CONTENT HERE
+                    <vue-chosen foo="bar"></vue-chosen>
+
+                </div>
+
+                <script type="text/javascript">var htmlSample = $('.liveExample').html();</script>
+                <source-view title="Source code: view" selector=".liveExample"></source-view>
+                <source-view title="Source code: view model" url="ScriptsLocal/Sample.Chosen.ts"></source-view>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- local scripts -->
+    <script src="ScriptsLocal/Utils.js"></script>
+    <script type="text/javascript" >
+        loader.baseURL = document.URL.substr(0, document.URL.lastIndexOf('/'));
+        loader('ListOfSamples.html').then(function (s) { new Vue({ el: '#ListOfSamples', template: s }); });
+    </script>
+    <script src="ScriptsLocal/components/directives.js"></script>
+    <script src="ScriptsLocal/components/SourceView.js"></script>
+
+    <!-- PAGE SCRIPT HERE -->
+    <script src="ScriptsLocal/Sample.Chosen.js"></script>
+</body>
+</html>
