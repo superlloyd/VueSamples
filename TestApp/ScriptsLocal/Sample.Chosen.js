@@ -27,3 +27,4 @@ var Sample;
         model.single = data[0];
     })(Chosen = Sample.Chosen || (Sample.Chosen = {}));
 })(Sample || (Sample = {}));
+//# sourceMappingURL=Sample.Chosen.js.map

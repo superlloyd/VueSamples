@@ -27,3 +27,4 @@ Vue.component('modal', function (resolve, reject) {
     })
         .fail(function (x) { return reject(); });
 });
+//# sourceMappingURL=Modal.js.map
