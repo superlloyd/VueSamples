@@ -11,6 +11,8 @@
                     }
                 },
                 ready: function () {
+                    $(this.$el).on('shown.bs.modal', () => this.show = true);
+                    $(this.$el).on('hidden.bs.modal', () => this.show = false);
                     this.showModal(this.show);  
                 },
                 methods: {

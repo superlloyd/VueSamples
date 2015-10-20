@@ -11,6 +11,9 @@ Vue.component('modal', function (resolve, reject) {
                 }
             },
             ready: function () {
+                var _this = this;
+                $(this.$el).on('shown.bs.modal', function () { return _this.show = true; });
+                $(this.$el).on('hidden.bs.modal', function () { return _this.show = false; });
                 this.showModal(this.show);
             },
             methods: {
