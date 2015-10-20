@@ -32,7 +32,7 @@ function loader(urlOrArgs) {
     else if (!useCache) {
         cache.reload(false);
     }
-    cache.result.then(function (s) {
+    cache.then(function (s) {
         cache.handle(options);
         result.resolve(s);
     });
@@ -42,29 +42,51 @@ var loader;
 (function (loader) {
     var CacheData = (function () {
         function CacheData(options) {
+            this.done = false;
+            this.callbacks = [];
             this.url = options.url;
             this.reload(options.cached);
         }
+        CacheData.prototype.then = function (doneFilter) {
+            if (this.done) {
+                if (this.text) {
+                    doneFilter(this.text);
+                }
+            }
+            else {
+                this.callbacks.push(doneFilter);
+            }
+        };
         CacheData.prototype.reload = function (useCache) {
             var _this = this;
             if (useCache === undefined)
                 useCache = true;
-            this.result = $.Deferred();
+            this.done = false;
+            this.text = null;
             this.query = $.ajax({
                 url: loader.baseURL + this.url,
                 cache: useCache,
             });
             this.query
                 .then(function (s) {
-                _this.result.resolve(s);
+                _this.done = true;
+                _this.text = s;
+                for (var i = 0; i < _this.callbacks.length; i++) {
+                    _this.callbacks[i](s);
+                }
+                _this.callbacks.splice(0, _this.callbacks.length);
             })
                 .fail(function (err) {
-                _this.result.reject(err);
+                _this.done = true;
+                _this.text = null;
+                _this.callbacks.splice(0, _this.callbacks.length);
                 alert('Problem loading ' + _this.url + ', ' + JSON.stringify(err));
             });
             ;
         };
         CacheData.prototype.handle = function (options) {
+            if (!this.done || !this.text)
+                return;
             if (options.type === undefined)
                 options.type = LoaderType.AsString;
             switch (options.type) {

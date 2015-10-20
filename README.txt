@@ -19,6 +19,8 @@ http://vuejs.org/examples/
 VUE LINKS
 =========
 
+
+
 Validation
 	https://github.com/vuejs/vue-validator
 Image loading animation 
@@ -27,4 +29,9 @@ Image loading animation
 
 TODO:
 	+ Paged Sorted grid
-	+ Modal component
+
+port to Vue 1.0 rc1
+https://github.com/vuejs/vue/releases/tag/1.0.0-rc.1
+http://rc.vuejs.org/guide/installation.html
+CDNJS: http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js
+

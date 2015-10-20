@@ -39,7 +39,7 @@ function loader(urlOrArgs: string | ILoaderOptions): JQueryPromise<string> {
     else if (!useCache) {
         cache.reload(false);
     }
-    cache.result.then(s => {
+    cache.then(s => {
         cache.handle(options);
         result.resolve(s);
     });
@@ -52,33 +52,55 @@ module loader {
             this.reload(options.cached);
         }
         private query: JQueryXHR;
-        result: JQueryDeferred<any>;
+        private done = false;
         private url: string;
         private text: string;
         private CSS: HTMLStyleElement;
         private CONTENT: HTMLDivElement;
         private Script: HTMLScriptElement;
+        private callbacks: ((s: string) => void)[] = [];
+
+        then(doneFilter: (value: string) => void) {
+            if (this.done) {
+                if (this.text) {
+                    doneFilter(this.text);
+                }
+            }
+            else {
+                this.callbacks.push(doneFilter);
+            }
+        }
 
         reload(useCache?: boolean) {
             if (useCache === undefined)
                 useCache = true;
-            this.result = $.Deferred<any>();
+            this.done = false
+            this.text = null;
             this.query = $.ajax({
                 url: loader.baseURL + this.url,
                 cache: useCache,
             });
             this.query
                 .then(s => {
-                    this.result.resolve(s);
+                    this.done = true;
+                    this.text = s;
+                    for (var i = 0; i < this.callbacks.length; i++) {
+                        this.callbacks[i](s);
+                    }
+                    this.callbacks.splice(0, this.callbacks.length);
                 })
                 .fail(err => {
-                    this.result.reject(err);
+                    this.done = true;
+                    this.text = null;
+                    this.callbacks.splice(0, this.callbacks.length);
                     alert('Problem loading ' + this.url + ', ' + JSON.stringify(err));
                 });
             ;
        }
 
         handle(options: ILoaderOptions) {
+            if (!this.done || !this.text)
+                return;
             if (options.type === undefined)
                 options.type = LoaderType.AsString;
             switch (options.type) {
