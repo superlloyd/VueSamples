@@ -294,3 +294,16 @@ module HASH {
     };
     $(document).ready(() => scrollToHash());
 }
+
+module Vue {
+    export function watcher(data: any, property, callback: (value) => void) {
+        var options = {
+            data: data,
+            watch: <any>{}
+        };
+        options.watch[property] = function (value) {
+            callback(value);
+        };
+        new Vue(options);
+    }
+}

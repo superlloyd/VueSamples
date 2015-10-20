@@ -272,3 +272,18 @@ var HASH;
     ;
     $(document).ready(function () { return scrollToHash(); });
 })(HASH || (HASH = {}));
+var Vue;
+(function (Vue) {
+    function watcher(data, property, callback) {
+        var options = {
+            data: data,
+            watch: {}
+        };
+        options.watch[property] = function (value) {
+            callback(value);
+        };
+        new Vue(options);
+    }
+    Vue.watcher = watcher;
+})(Vue || (Vue = {}));
+//# sourceMappingURL=Utils.js.map

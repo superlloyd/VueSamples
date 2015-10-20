@@ -1,30 +1,15 @@
-Some Vue JS Sample to test Vue JS MVVM library under various scenario.
-Also use TypeScript and Bootstrap to beautify th code and the UI.
+
+VisualStudio 2015 project show casing VueJS, TypeScript, Bootstrap
 
 - VueJS: http://vuejs.org
 - Bootstrap: http://getbootstrap.com/
 - TypeScript: http://www.typescriptlang.org/
 
+(also requires "Web Compiler" VS Extension to turn .less file into .css)
 
-TODO
-
-VueJS (to comprehend)
-http://vuejs.org/examples/
-
-.less file compiling
-	Install "Web Compiler" VS extension
-	then right click on .less file > Web Compiler > compile file
-
-
-VUE LINKS
-=========
-
-
-
-Validation
-	https://github.com/vuejs/vue-validator
-Image loading animation 
-	http://codepen.io/pespantelis/pen/RWVZxL
+Mostly a collection of simple but progressively complex samples.
+It's an empty MVC project with WebAPI setup in the eventuality of doing some JSON experiment with Vue.
+As well as some advanced sample and reusable control I need for my own projects.
 
 
 TODO:
@@ -35,3 +20,8 @@ https://github.com/vuejs/vue/releases/tag/1.0.0-rc.1
 http://rc.vuejs.org/guide/installation.html
 CDNJS: http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js
 
+
+LINKS
+======
+Image loading animation 
+	http://codepen.io/pespantelis/pen/RWVZxL
