@@ -89,6 +89,7 @@
     <Content Include="Content\samples.min.css">
       <DependentUpon>samples.css</DependentUpon>
     </Content>
+    <Content Include="Sample.Grid.html" />
     <Content Include="Sample.Modal.html" />
     <Content Include="Sample.Chosen.html" />
     <Content Include="Sample.MapControl.html" />
@@ -101,6 +102,7 @@
     <Content Include="Sample.KO4.html" />
     <Content Include="Sample.KO3.html" />
     <Content Include="ListOfSamples.html" />
+    <Content Include="ScriptsLocal\components\Grid.html" />
     <Content Include="ScriptsLocal\components\Modal.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -135,12 +137,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsLocal\chosen.d.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\GoogleMap.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\components\Grid.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\Modal.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\TabControl.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\VueChosen.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.Chosen.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.MapControl.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.Modal.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\Sample.Grid.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.TabControl.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.ShopCart-products.ts" />
     <TypeScriptCompile Include="ScriptsLocal\components\SourceView.ts" />
