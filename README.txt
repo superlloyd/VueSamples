@@ -14,14 +14,9 @@ As well as some advanced sample and reusable control I need for my own projects.
 
 TODO:
 	+ Paged Sorted grid
+	+ add some JSON loader... (with wait animation)
 
 port to Vue 1.0 rc1
 https://github.com/vuejs/vue/releases/tag/1.0.0-rc.1
 http://rc.vuejs.org/guide/installation.html
 CDNJS: http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js
-
-
-LINKS
-======
-Image loading animation 
-	http://codepen.io/pespantelis/pen/RWVZxL

@@ -5,10 +5,5 @@
         data: {
             showModal: false
         },
-        watch: {
-            showModal: function (val) {
-                console.log('showModal', val);
-            }
-        }
     });
 }

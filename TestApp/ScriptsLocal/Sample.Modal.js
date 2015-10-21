@@ -7,12 +7,6 @@ var Sample;
             data: {
                 showModal: false
             },
-            watch: {
-                showModal: function (val) {
-                    console.log('showModal', val);
-                }
-            }
         });
     })(Modal = Sample.Modal || (Sample.Modal = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.Modal.js.map
