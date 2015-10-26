@@ -5,13 +5,19 @@
         price: number;
     }
     class CartLine {
-        category: any = null;
         product: IProduct = null;
         quantity: number = 1;
         constructor() {
-            // REMARK local additional functionality, not part of original Vue!!!
-            Vue.watcher(this, 'category', (x) => this.product = null);
         }
+
+        // using getter and setter property! :P
+        get category() { return this._category; }
+        set category(value) {
+            this._category = value;
+            this.product = null;
+        }
+        _category: any = null;
+
         subtotal() {
             if (!this.product)
                 return 0;

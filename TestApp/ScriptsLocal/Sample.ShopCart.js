@@ -4,13 +4,20 @@ var Sample;
     (function (KO3) {
         var CartLine = (function () {
             function CartLine() {
-                var _this = this;
-                this.category = null;
                 this.product = null;
                 this.quantity = 1;
-                // REMARK local additional functionality, not part of original Vue!!!
-                Vue.watcher(this, 'category', function (x) { return _this.product = null; });
+                this._category = null;
             }
+            Object.defineProperty(CartLine.prototype, "category", {
+                // using getter and setter property! :P
+                get: function () { return this._category; },
+                set: function (value) {
+                    this._category = value;
+                    this.product = null;
+                },
+                enumerable: true,
+                configurable: true
+            });
             CartLine.prototype.subtotal = function () {
                 if (!this.product)
                     return 0;
