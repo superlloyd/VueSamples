@@ -32,11 +32,23 @@ Vue.component('google-map', function (resolve, reject) {
                     type: Number,
                     required: false,
                 },
+                width: {
+                    type: String,
+                    required: false,
+                    default: '510pt',
+                },
+                height: {
+                    type: String,
+                    required: false,
+                    default: '340pt',
+                },
                 markers: null,
             },
             attached: function () {
                 var getv = function (x, y) { return x == undefined ? y : x; };
-                var lat;
+                var mm = this.$el;
+                mm.style.width = this.width;
+                mm.style.height = this.height;
                 var map = new google.maps.Map(this.$el, {
                     center: new google.maps.LatLng(getv(this.lat, -27.468), getv(this.lng, 153.025)),
                     zoom: getv(this.zoom, 10),
