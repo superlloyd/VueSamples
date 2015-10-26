@@ -65,14 +65,14 @@
                             <tr>
                                 <td width='25%'>
                                     <select v-model="line.category">
-                                        <option v-bind:value="null">Select...</option>
-                                        <option v-for="cat in categories" v-bind:value="cat">{{cat.name}}</option>
+                                        <option :value="null">Select...</option>
+                                        <option v-for="cat in categories" :value="cat">{{cat.name}}</option>
                                     </select>
                                 </td>
                                 <td width='25%'>
                                     <select v-show="line.category" v-model="line.product">
-                                        <option v-bind:value="null">Select...</option>
-                                        <option v-for="p in line.category.products" v-bind:value="p">{{p.name}}</option>
+                                        <option :value="null">Select...</option>
+                                        <option v-for="p in line.category.products" :value="p">{{p.name}}</option>
                                     </select>
                                 </td>
                                 <td class='price' width='15%'>

@@ -37,11 +37,11 @@
                 <div class="liveExample">
                     <button v-on:click="showModal = !showModal">Show Modal</button>
                     <!-- use the modal component, pass in the prop -->
-                    <modal v-bind:show.sync="showModal">
-                        <div class="modalheader">
+                    <modal :show.sync="showModal">
+                        <div slot="header">
                             <h3>customized header</h3>
                         </div>
-                        <div class="modalbody">
+                        <div slot="body">
                             <p>Name <input type="text" /></p>
                             <p>Age <input type="text" /></p>
                             <p>Info <input type="text" /></p>

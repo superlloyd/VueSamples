@@ -50,7 +50,7 @@
                     </form>
                     <p>Your values:</p>
                     <select multiple style="width:100%;" v-model="selected">
-                        <option v-for="item in items" v-bind:value="item">{{item}}</option>
+                        <option v-for="item in items" :value="item">{{item}}</option>
                     </select>
                     <div>
                         <button v-on:click="removeSelected()" v-enable="selected.length > 0">Remove</button>

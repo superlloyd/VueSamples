@@ -49,7 +49,7 @@
                         <button type="submit" v-enable="itemToAdd.length > 0">Add</button>
                         <p>Your items:</p>
                         <select multiple style="width:100%;" v-model="selected" options="items">
-                            <option v-for="item in items" v-bind:value="item">{{item}}</option> 
+                            <option v-for="item in items" :value="item">{{item}}</option> 
                         </select>
                     </form>
                 </div>

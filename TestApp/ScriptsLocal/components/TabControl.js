@@ -57,3 +57,4 @@ Vue.directive('tabcontrol', {
         });
     }
 });
+//# sourceMappingURL=TabControl.js.map

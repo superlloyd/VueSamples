@@ -42,10 +42,10 @@
                 <div class="liveExample">
                     <p>
                         Multi Selection:
-                        <vue-chosen v-bind:options="books" 
-                                    v-bind:selected-options.sync="selected"
-                                    v-bind:multiple="true"
-                                    v-bind:chosen="{ width:'30em'}"
+                        <vue-chosen :options="books" 
+                                    :selected-options.sync="selected"
+                                    :multiple="true"
+                                    :chosen="{ width:'30em'}"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />
@@ -55,9 +55,9 @@
                     </p>
                     <p>
                         Single Selection
-                        <vue-chosen v-bind:options="books" 
-                                    v-bind:v-model.sync="single"
-                                    v-bind:chosen="{ width:'20em'}"
+                        <vue-chosen :options="books" 
+                                    :v-model.sync="single"
+                                    :chosen="{ width:'20em'}"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />

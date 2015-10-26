@@ -101,7 +101,7 @@
                             <td class="label">Drop-down list:</td>
                             <td>
                                 <select v-model="selectedOptionValue">
-                                    <option v-for="op in optionValues" v-bind:value="op">{{op}}</option>
+                                    <option v-for="op in optionValues" :value="op">{{op}}</option>
                                 </select>
                             </td>
                         </tr>
@@ -109,7 +109,7 @@
                             <td class="label">Multi-select drop-down list:</td>
                             <td>
                                 <select multiple style="width:200px;" v-model="multipleSelectedOptionValues">
-                                    <option v-for="op in optionValues" v-bind:value="op">{{op}}</option>
+                                    <option v-for="op in optionValues" :value="op">{{op}}</option>
                                 </select>
                             </td>
                         </tr>
