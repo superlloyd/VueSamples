@@ -45,6 +45,7 @@ Vue.directive('tabcontrol', {
                 el.removeChild(el.childNodes[0]);
             el.appendChild(panel);
         }
+        // synchronize current Tab with the HASH
         var activate = function (previous, current) {
             var tab = current.kv[myId];
             if (tab)

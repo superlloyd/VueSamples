@@ -248,7 +248,7 @@ var HASH;
             current = o;
             window.location.hash = objectToHash(o);
         }
-        return current;
+        return hashToObject();
     }
     HASH.value = value;
     function set(key, value) {

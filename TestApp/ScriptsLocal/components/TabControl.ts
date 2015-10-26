@@ -50,6 +50,8 @@
                 el.removeChild(el.childNodes[0]);
             el.appendChild(panel);
         }
+
+        // synchronize current Tab with the HASH
         var activate = (previous: HASH.ILocation, current: HASH.ILocation) => {
             var tab = current.kv[myId];
             if (tab)

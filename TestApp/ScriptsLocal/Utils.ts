@@ -272,7 +272,7 @@ module HASH {
             current = o;
             window.location.hash = objectToHash(o);
         }
-        return current;
+        return hashToObject();
     }
     export function set(key: string, value: string): ILocation {
         var o = hashToObject();
