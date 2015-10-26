@@ -19,4 +19,3 @@ var Sample;
         });
     })(MapControl = Sample.MapControl || (Sample.MapControl = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.MapControl.js.map

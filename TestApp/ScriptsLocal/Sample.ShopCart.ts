@@ -50,12 +50,5 @@
                 return "$" + value.toFixed(2);
             },
         },
-        filters: {
-            mapByKey: function (val, key) {
-                if (!val)
-                    return val;
-                return val.map(x => { return { text: x[key], value: x }; });
-            },
-        },
     });
 }

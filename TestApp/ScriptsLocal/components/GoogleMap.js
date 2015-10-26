@@ -69,4 +69,3 @@ Vue.component('google-map', function (resolve, reject) {
         });
     });
 });
-//# sourceMappingURL=GoogleMap.js.map

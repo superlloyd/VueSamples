@@ -52,14 +52,6 @@ var Sample;
                     return "$" + value.toFixed(2);
                 },
             },
-            filters: {
-                mapByKey: function (val, key) {
-                    if (!val)
-                        return val;
-                    return val.map(function (x) { return { text: x[key], value: x }; });
-                },
-            },
         });
     })(KO3 = Sample.KO3 || (Sample.KO3 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.ShopCart.js.map
