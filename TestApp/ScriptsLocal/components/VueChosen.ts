@@ -75,7 +75,11 @@
                     this.selectedOptions = target;
                 }
                 target.splice(0, target.length);
-                $(this.$el).find(':selected').each((i, e) => target.push($(e).data('chosen').value));
+                $(this.$el).find(':selected').each((i, e) => {
+                    var data = $(e).data('chosen');
+                    if (data)
+                        target.push(data.value)
+                });
                 this.vModel = target.length > 0 ? target[0] : null;
             }
             finally {

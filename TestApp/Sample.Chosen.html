@@ -57,7 +57,7 @@
                         Single Selection
                         <vue-chosen :options="books" 
                                     :v-model.sync="single"
-                                    :chosen="{ width:'20em'}"
+                                    :chosen="{ width:'20em', allow_single_deselect: true }"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />

@@ -82,7 +82,11 @@ Vue.component('vue-chosen', {
                     _this.selectedOptions = target;
                 }
                 target.splice(0, target.length);
-                $(_this.$el).find(':selected').each(function (i, e) { return target.push($(e).data('chosen').value); });
+                $(_this.$el).find(':selected').each(function (i, e) {
+                    var data = $(e).data('chosen');
+                    if (data)
+                        target.push(data.value);
+                });
                 _this.vModel = target.length > 0 ? target[0] : null;
             }
             finally {
