@@ -1,4 +1,4 @@
-Vue.component('vue-chosen', {
+Vue.component('chosen', {
     template: '<select v-bind:data-placeholder="placeholder" v-bind:multiple="multiple" class="chosen-select">' +
         ' <option v-if="placeholder"></option>' +
         ' <option v-for="item in options | toOptionData" v-j-data="item">{{item.text}}</option>' +

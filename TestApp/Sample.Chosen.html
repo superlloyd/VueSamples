@@ -42,12 +42,12 @@
                 <div class="liveExample">
                     <p>
                         Multi Selection:
-                        <vue-chosen :options="books" 
-                                    :selected-options.sync="selected"
-                                    :multiple="true"
-                                    :chosen="{ width:'30em'}"
-                                    placeholder="chose a book!.."
-                                    text-key="name"></vue-chosen>
+                        <chosen :options="books" 
+                                :selected-options.sync="selected"
+                                :multiple="true"
+                                :chosen="{ width:'30em'}"
+                                placeholder="chose a book!.."
+                                text-key="name"/>
                         <br />
                         <span v-for="item in selected">
                             {{ item.name }} ({{ item.ID }}),
@@ -55,11 +55,11 @@
                     </p>
                     <p>
                         Single Selection
-                        <vue-chosen :options="books" 
-                                    :v-model.sync="single"
-                                    :chosen="{ width:'20em', allow_single_deselect: true }"
-                                    placeholder="chose a book!.."
-                                    text-key="name"></vue-chosen>
+                        <chosen :options="books" 
+                                :v-model.sync="single"
+                                :chosen="{ width:'20em', allow_single_deselect: true }"
+                                placeholder="chose a book!.."
+                                text-key="name"/>
                         <br />
                         <span v-if="single">
                             {{single.name}} by {{single.author}}, ratings: {{single.rating}} ({{single.ID}})
