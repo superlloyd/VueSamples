@@ -18,7 +18,7 @@
             this._category = value;
             this.product = null;
         }
-        _category: any = null;
+        private _category: any = null;
 
         subtotal() {
             if (!this.product)

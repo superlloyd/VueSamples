@@ -10,3 +10,4 @@ var Sample;
         });
     })(Modal = Sample.Modal || (Sample.Modal = {}));
 })(Sample || (Sample = {}));
+//# sourceMappingURL=Sample.Modal.js.map
