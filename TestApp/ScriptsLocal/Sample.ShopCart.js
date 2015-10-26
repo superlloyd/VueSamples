@@ -7,6 +7,8 @@ var Sample;
                 this.product = null;
                 this.quantity = 1;
                 this._category = null;
+                // REMARK local additional functionality, not part of original Vue!!!
+                //Vue.watcher(this, 'category', (x) => this.product = null); // previous technique
             }
             Object.defineProperty(CartLine.prototype, "category", {
                 // using getter and setter property! :P
