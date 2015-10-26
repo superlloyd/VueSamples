@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- VueJS (0.12.16) -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js"></script>
 
     <!-- chosen files -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.proto.min.js"></script>
@@ -42,20 +42,22 @@
                 <div class="liveExample">
                     <p>
                         Multi Selection:
-                        <vue-chosen options="{{books}}" selected-options="{{@ selected}}"
-                                    multiple="true"
-                                    chosen="{{ { width:'30em'} }}"
+                        <vue-chosen v-bind:options="books" 
+                                    v-bind:selected-options.sync="selected"
+                                    v-bind:multiple="true"
+                                    v-bind:chosen="{ width:'30em'}"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />
-                        <span v-repeat="item in selected">
+                        <span v-for="item in selected">
                             {{ item.name }} ({{single.ID}}),
                         </span>
                     </p>
                     <p>
                         Single Selection
-                        <vue-chosen options="{{books}}" v-model="{{@ single}}"
-                                    chosen="{{ { width:'20em'} }}"
+                        <vue-chosen v-bind:options="books" 
+                                    v-bind:v-model.sync="single"
+                                    v-bind:chosen="{ width:'20em'}"
                                     placeholder="chose a book!.."
                                     text-key="name"></vue-chosen>
                         <br />

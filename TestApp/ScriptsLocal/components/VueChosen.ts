@@ -1,7 +1,7 @@
 ﻿Vue.component('vue-chosen', {
-    template: '<select data-placeholder={{placeholder}} v-attr="multiple:multiple" class="chosen-select">' +
+    template: '<select v-bind:data-placeholder="placeholder" v-bind:multiple="multiple" class="chosen-select">' +
     ' <option v-if="placeholder"></option>' +
-    ' <option v-repeat="item in options | toOptionData" v-j-data="item">{{item.text}}</option>' +
+    ' <option v-for="item in options | toOptionData" v-j-data="item">{{item.text}}</option>' +
     ' </select>'
     ,
     data: function () {
@@ -29,6 +29,8 @@
             if (!val)
                 return val;
             var key = this.textKey;
+            if (!(val instanceof Array))  //???
+                return val;
             return val.map(x => {
                 if (key) return { text: x[key], value: x };
                 else return { text: (x ? x : '').toString(), value: x };

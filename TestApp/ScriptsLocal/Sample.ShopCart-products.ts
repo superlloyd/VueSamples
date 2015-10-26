@@ -1,7 +1,7 @@
 ﻿// Some of the Knockout examples use this data
 var sampleProductCategories = [
     {
-        "value": [
+        "products": [
             {
                 "name": "1948 Porsche 356-A Roadster",
                 "price": 53.9
@@ -155,10 +155,10 @@ var sampleProductCategories = [
                 "price": 62.11
             }
         ],
-        "text": "Classic Cars"
+        "name": "Classic Cars"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "1936 Harley Davidson El Knucklehead",
                 "price": 24.23
@@ -212,10 +212,10 @@ var sampleProductCategories = [
                 "price": 91.02
             }
         ],
-        "text": "Motorcycles"
+        "name": "Motorcycles"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "1900s Vintage Bi-Plane",
                 "price": 34.25
@@ -265,10 +265,10 @@ var sampleProductCategories = [
                 "price": 49.0
             }
         ],
-        "text": "Planes"
+        "name": "Planes"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "18th century schooner",
                 "price": 82.34
@@ -306,10 +306,10 @@ var sampleProductCategories = [
                 "price": 33.97
             }
         ],
-        "text": "Ships"
+        "name": "Ships"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "1950's Chicago Surface Lines Streetcar",
                 "price": 26.72
@@ -323,10 +323,10 @@ var sampleProductCategories = [
                 "price": 67.56
             }
         ],
-        "text": "Trains"
+        "name": "Trains"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "1926 Ford Fire Engine",
                 "price": 24.92
@@ -372,10 +372,10 @@ var sampleProductCategories = [
                 "price": 68.29
             }
         ],
-        "text": "Trucks and Buses"
+        "name": "Trucks and Buses"
     },
     {
-        "value": [
+        "products": [
             {
                 "name": "18th Century Vintage Horse Carriage",
                 "price": 60.74
@@ -473,6 +473,6 @@ var sampleProductCategories = [
                 "price": 64.58
             }
         ],
-        "text": "Vintage Cars"
+        "name": "Vintage Cars"
     }
 ];

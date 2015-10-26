@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- VueJS (0.12.16) -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js"></script>
 
     <!-- sample styles -->
     <link href="Content/samples.css" rel="stylesheet" />
@@ -46,10 +46,10 @@
                 <h2>Live Example</h2>
                 <div class="liveExample">
                     <div>You've clicked <span v-text='numberOfClicks'>&nbsp;</span> times</div>
-                    <button v-on="click: registerClick()" v-disable="hasClickedTooManyTimes">Click me</button>
+                    <button v-on:click="registerClick()" v-disable="hasClickedTooManyTimes">Click me</button>
                     <div v-show='hasClickedTooManyTimes'>
                         That's too many clicks! Please stop before you wear out your fingers.
-                        <button v-on='click: numberOfClicks = 0'>Reset clicks</button>
+                        <button v-on:click='numberOfClicks = 0'>Reset clicks</button>
                     </div>
                 </div>
 

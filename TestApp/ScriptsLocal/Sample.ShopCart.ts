@@ -17,7 +17,7 @@
                 return 0;
             return this.product.price * this.quantity;
         }
-    }
+   }
     class Cart {
         lines = [new CartLine()];
         grandTotal() {
@@ -48,7 +48,7 @@
         methods: {
             formatCurrency: function (value) {
                 return "$" + value.toFixed(2);
-            }
+            },
         },
         filters: {
             mapByKey: function (val, key) {

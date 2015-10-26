@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- VueJS (0.12.16) -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.1/vue.min.js"></script>
 
     <!-- sample styles -->
     <link href="Content/samples.css" rel="stylesheet" />
@@ -61,29 +61,31 @@
                                 <th width='10%'> </th>
                             </tr>
                         </thead>
-                        <tbody v-repeat='lines'>
+                        <tbody v-for='line in lines'>
                             <tr>
                                 <td width='25%'>
-                                    <select v-model="category" options="categories">
-                                        <option value="">Select...</option>
+                                    <select v-model="line.category">
+                                        <option v-bind:value="null">Select...</option>
+                                        <option v-for="cat in categories" v-bind:value="cat">{{cat.name}}</option>
                                     </select>
                                 </td>
                                 <td width='25%'>
-                                    <select v-show="category" v-model="product" options='category | mapByKey "name"'>
-                                        <option value="">Select...</option>
+                                    <select v-show="line.category" v-model="line.product">
+                                        <option v-bind:value="null">Select...</option>
+                                        <option v-for="p in line.category.products" v-bind:value="p">{{p.name}}</option>
                                     </select>
                                 </td>
                                 <td class='price' width='15%'>
-                                    <span v-text='formatCurrency(product.price)'> </span>
+                                    <span v-text='formatCurrency(line.product.price)'> </span>
                                 </td>
                                 <td class='quantity' width='10%'>
-                                    <input v-show='product' v-model='quantity' />
+                                    <input v-show='line.product' v-model='line.quantity' />
                                 </td>
                                 <td class='price' width='15%'>
-                                    <span v-show="product" v-text='formatCurrency($data.subtotal())' > </span>
+                                    <span v-show="line.product" v-text='formatCurrency(line.subtotal())' > </span>
                                 </td>
                                 <td width='10%'>
-                                    <a href='#' v-on='click: $parent.$data.removeLine($data)'>Remove</a>
+                                    <a href='#' v-on:click='$data.removeLine(line)'>Remove</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -91,8 +93,8 @@
                     <p class='grandTotal'>
                         Total value: <span v-text='formatCurrency($data.grandTotal())'> </span>
                     </p>
-                    <button v-on='click: $data.addLine()'>Add product</button>
-                    <button v-on='click: $data.save()'>Submit order</button>
+                    <button v-on:click='$data.addLine()'>Add product</button>
+                    <button v-on:click='$data.save()'>Submit order</button>
 
                 </div>
                 <script type="text/javascript">var htmlSample = $('.liveExample').html();</script>

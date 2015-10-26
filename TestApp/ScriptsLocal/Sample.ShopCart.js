@@ -50,7 +50,7 @@ var Sample;
             methods: {
                 formatCurrency: function (value) {
                     return "$" + value.toFixed(2);
-                }
+                },
             },
             filters: {
                 mapByKey: function (val, key) {
@@ -62,4 +62,3 @@ var Sample;
         });
     })(KO3 = Sample.KO3 || (Sample.KO3 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.ShopCart.js.map
