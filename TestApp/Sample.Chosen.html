@@ -9,8 +9,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <!-- VueJS (0.12.16) -->
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-rc.2/vue.min.js"></script>
+    <!-- VueJS (1.0.0) -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0/vue.min.js"></script>
 
     <!-- chosen files -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.proto.min.js"></script>
@@ -47,7 +47,7 @@
                                 :multiple="true"
                                 :chosen="{ width:'30em'}"
                                 placeholder="chose a book!.."
-                                text-key="name"/>
+                                text-key="name"></chosen>
                         <br />
                         <span v-for="item in selected">
                             {{ item.name }} ({{ item.ID }}),
@@ -59,7 +59,7 @@
                                 :v-model.sync="single"
                                 :chosen="{ width:'20em', allow_single_deselect: true }"
                                 placeholder="chose a book!.."
-                                text-key="name"/>
+                                text-key="name"></chosen>
                         <br />
                         <span v-if="single">
                             {{single.name}} by {{single.author}}, ratings: {{single.rating}} ({{single.ID}})
