@@ -12,3 +12,4 @@ var Sample;
         });
     })(KO1 = Sample.KO1 || (Sample.KO1 = {}));
 })(Sample || (Sample = {}));
+//# sourceMappingURL=Sample.TabControl.js.map

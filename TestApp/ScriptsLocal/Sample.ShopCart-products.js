@@ -476,3 +476,4 @@ var sampleProductCategories = [
         "name": "Vintage Cars"
     }
 ];
+//# sourceMappingURL=Sample.ShopCart-products.js.map
