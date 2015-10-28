@@ -113,4 +113,3 @@ Vue.component('chosen', {
         },
     },
 });
-//# sourceMappingURL=VueChosen.js.map

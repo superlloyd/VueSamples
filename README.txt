@@ -16,6 +16,7 @@ TODO:
 	+ Paged Sorted grid
 	+ add some JSON loader... (with wait animation)
 
+
 port to Vue 1.0 rc1
 https://github.com/vuejs/vue/releases/tag/1.0.0-rc.1
 http://rc.vuejs.org/guide/installation.html

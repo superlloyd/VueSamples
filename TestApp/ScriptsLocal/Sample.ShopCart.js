@@ -64,4 +64,3 @@ var Sample;
         });
     })(KO3 = Sample.KO3 || (Sample.KO3 = {}));
 })(Sample || (Sample = {}));
-//# sourceMappingURL=Sample.ShopCart.js.map

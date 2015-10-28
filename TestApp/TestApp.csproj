@@ -90,6 +90,7 @@
       <DependentUpon>samples.css</DependentUpon>
     </Content>
     <Content Include="Sample.Grid.html" />
+    <Content Include="Sample.Youtube.html" />
     <Content Include="Sample.Modal.html" />
     <Content Include="Sample.Chosen.html" />
     <Content Include="Sample.MapControl.html" />
@@ -155,6 +156,7 @@
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO5.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO4.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Sample.KO3.ts" />
+    <TypeScriptCompile Include="ScriptsLocal\Sample.Youtube.ts" />
     <TypeScriptCompile Include="ScriptsLocal\Utils.ts" />
     <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\googlemaps\google.maps.d.ts" />
