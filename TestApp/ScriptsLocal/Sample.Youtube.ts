@@ -1,8 +1,9 @@
 ﻿namespace Sample.Youtue {
 
     var clips = [
-        { name: 'Anastasia Volochkova(Adiemus)', tag: 'XP9tzWtLFus' },
-        { name: 'Sound Of Silence (Masters of Chant)', tag: 'raRaxt_KM9Q'},
+        { name: '10 Video Games That Left Us Emotionally Devastated', tag: 'gYi9Xfguf_g' },
+        { name: 'Tested: Microsoft Surface Book Review', tag: 'UBF3EreWIm8' },
+        { name: 'Star Wars: The Force Awakens Official Trailer', tag: 'ecH49e_Pw20' },
     ];
 
     new Vue({
@@ -10,16 +11,6 @@
         data: {
             selection: null,
             clips: clips,
-        },
-        // need a directive to refresh the preview when the URL change
-        directives: {
-            src: function (value) {
-                var e: HTMLEmbedElement = this.el;
-                var e2: any = e.cloneNode();
-                e2.src = value;
-                e.parentNode.replaceChild(e2, e);
-                this.el = e2;
-            },
         },
     });
 

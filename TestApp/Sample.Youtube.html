@@ -39,12 +39,19 @@
                         <option :value="null">Pick Video....</option>
                         <option v-for="clip in clips" :value="clip">{{clip.name}}</option>
                     </select>
+                    <div class="btn-group" role="group">
+                        <button v-for="clip in clips" type="button" class="btn btn-default {{ selection == clip ? 'active' : '' }}"
+                                @click="selection = clip">
+                            <span class="yt-uix-simple-thumb-wrap yt-uix-simple-thumb-related" tabindex="0"
+                                  data-vid="{{clip.tag}}">
+                                <img src="https://i.ytimg.com/vi_webp/{{clip.tag}}/default.webp"
+                                     alt="" aria-hidden="true" width="120" height="90">
+                            </span>
+                        </button>
+                    </div>
                     <div v-if="selection">
-                        <embed v-src="'http://www.youtube.com/v/' + selection.tag + '&autoplay=0'" 
-                               type="application/x-shockwave-flash" 
-                               allowscriptaccess="never" 
-                               enablejavascript="false" allowfullscreen="true" 
-                               width="640" height="480"><br/>
+                        <iframe width="640" height="360" src="https://www.youtube.com/embed/{{selection.tag}}" frameborder="0" allowfullscreen></iframe>
+                        <br />
                         <span>{{selection.name}}</span>
                     </div>
                 </div>
